@@ -1,0 +1,28 @@
+<svg width="1000" height="200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 10 100 Q 500 100 990 100" stroke="white" fill="transparent" />
+</svg>
+<!--
+var path = "M 10 100 Q 500 100 990 100"
+var finelpath = "M 10 100 Q 500 100 990 100"
+
+
+var string = document.querySelector("#string")
+
+string.addEventListener("mousemove", function(dets){
+path =`M 10 100 Q ${dets.x} ${dets.y} 990 100`}
+gsap.to("svg path",{
+    attr:{d:path},
+    duration: 0.2,
+    ease: "elastic.out",
+    })
+})
+
+string.addEventListener("mouseleave", function(){
+
+    gsap.to("svg path",{
+        attr:{d:finelpath},
+        duration: 0.5,
+        ease: "elastic.out(1,0,2)",
+        })
+    })
+ -->
