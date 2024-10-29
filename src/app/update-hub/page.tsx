@@ -21,7 +21,7 @@ const updates: Update[] = [
       id: 3,
       name: 'Stable - 1.05.2.A',
       version: '1.02.2.A',
-      dateTime: 'Sunday, October 29, 2024 01:00 am',
+      dateTime: 'Tuesday, October 29, 2024 01:00 am',
       title: 'Stable Release 1.01.0.A for All Users',
       what: ' Offer multiple pricing tiers and packages that are affordable and cater to different user needs.',
       why: 'To ensure stability and optimize the developer experience based on feedback from the beta phase.',
