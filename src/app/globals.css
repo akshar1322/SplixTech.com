@@ -107,6 +107,14 @@ body {
       format('woff'); /* Font source and format */
   }
 }
+@layer base {
+  @font-face {
+    font-family: saiddier; /* Name of your custom font */
+    font-weight: 400; /* Font weight (normal) */
+    src: url(../../public/fonts/saiddier/SAIDDIER.otf)
+      format('woff'); /* Font source and format */
+  }
+}
 
 .yellowDot-cursor {
   cursor: url(../../public/Images/Cursor/icons8-dot-24.svg), auto;

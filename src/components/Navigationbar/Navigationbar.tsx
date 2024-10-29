@@ -7,10 +7,12 @@ import { FaTimes, FaBars } from "react-icons/fa";
 
 const Menulinks = [
   { title: "Home", link: "/" },
+  { title: "Pricing", link: "/pricing" },
   { title: "About", link: "/about-us" },
   { title: "Services", link: "/services" },
   { title: "Contact Us", link: "/contact-us" },
-  { title: "Update Hub", link: "/update-hub" }
+  { title: "Update Hub", link: "/update-hub" },
+
 ];
 
 const Navigationbar = () => {

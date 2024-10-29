@@ -1,24 +1,24 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper"; // Only import the Swiper type here
-import "swiper/swiper-bundle.css"; // Import Swiper styles
+import { Swiper as SwiperType } from "swiper";
+import "swiper/swiper-bundle.css";
 import { gsap } from "gsap";
-import { Howl } from "howler"; // For sound playback
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
+import { Howl } from "howler";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-// Define the PricingPackage type
 interface PricingPackage {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    originalPrice: number;
-    category: string;
-    image: string;
-    features: string[];
-    label?: string; // Label is optional
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  originalPrice: number;
+  category: string;
+  image: string;
+  features: string[];
+  label?: string;
 }
+
 const packages: PricingPackage[] = [
     {
         id: 1,
@@ -27,7 +27,7 @@ const packages: PricingPackage[] = [
         price: 100,
         originalPrice: 120,
         category: 'Web Development',
-        image: '/images/webdev1.jpg',
+        image: '/images/Art/10368879.jpg',
         features: ['✓ Responsive Design', '✓ SEO Optimization', '✓ 1-Year Support'],
         label: '',//Limited Time Offer
     },
@@ -38,7 +38,7 @@ const packages: PricingPackage[] = [
         price: 250,
         originalPrice: 300,
         category: 'Web Development',
-        image: '/images/webdev2.jpg',
+        image: '/images/Art/3507897.jpg',
         features: ['✓ Shopping Cart Integration', '✓ Payment Gateway Setup', '✓ SEO Optimization'],
         label: 'Recommended',
     },
@@ -49,7 +49,7 @@ const packages: PricingPackage[] = [
         price: 150,
         originalPrice: 180,
         category: 'UI/UX Design',
-        image: '/images/uiux1.jpg',
+        image: '/images/Art/4461751.jpg',
         features: ['✓ User Research', '✓ Wireframing', '✓ Prototyping'],
         label: 'Most Popular',
     },
@@ -60,7 +60,7 @@ const packages: PricingPackage[] = [
         price: 100,
         originalPrice: 120,
         category: 'UI/UX Design',
-        image: '/images/uiux2.jpg',
+        image: '/images/Art/4524740.jpg',
         features: ['✓ User Interface Design', '✓ Feedback Iteration', '✓ Basic User Testing'],
         label: 'Limited Time Offer',
     },
@@ -71,7 +71,7 @@ const packages: PricingPackage[] = [
         price: 300,
         originalPrice: 350,
         category: 'Software Development',
-        image: '/images/software1.jpg',
+        image: '/images/Art/5397952.jpg',
         features: ['✓ Custom Software', '✓ System Integration', '✓ User Training'],
         label: 'Recommended',
     },
@@ -82,7 +82,7 @@ const packages: PricingPackage[] = [
         price: 400,
         originalPrice: 450,
         category: 'AI',
-        image: '/images/ai1.jpg',
+        image: '/images/Art/10_geometric.jpg',
         features: ['✓ Machine Learning', '✓ Data Analysis', '✓ Predictive Modeling'],
         label: '',
     },
@@ -93,7 +93,7 @@ const packages: PricingPackage[] = [
         price: 500,
         originalPrice: 550,
         category: 'AI',
-        image: '/images/ai2.jpg',
+        image: '/images/Art/6882381.jpg',
         features: ['✓ Deep Learning', '✓ Natural Language Processing', '✓ Custom AI Solutions'],
         label: 'Limited Time Offer',
     },
@@ -104,7 +104,7 @@ const packages: PricingPackage[] = [
         price: 350,
         originalPrice: 400,
         category: 'Mobile Development',
-        image: '/images/mobile1.jpg',
+        image: '/images/Art/8269165.jpg',
         features: ['✓ Cross-Platform Development', '✓ User-Centric Design', '✓ Testing & Deployment'],
         label: 'Recommended',
     },
@@ -115,7 +115,7 @@ const packages: PricingPackage[] = [
         price: 600,
         originalPrice: 650,
         category: 'Software Development',
-        image: '/images/software2.jpg',
+        image: '/images/Art/10368879.jpg',
         features: ['✓ Scalable Solutions', '✓ Multi-user Access', '✓ Performance Optimization'],
         label: 'Most Popular',
     },
@@ -126,92 +126,119 @@ const packages: PricingPackage[] = [
         price: 400,
         originalPrice: 450,
         category: 'Web Development',
-        image: '/images/webdev3.jpg',
+        image: '/images/Art/10368879.jpg',
         features: ['✓ Real-time Data', '✓ User Authentication', '✓ Scalable Architecture'],
         label: 'Limited Time Offer',
     },
   ];
 
-
 const PricingCard = () => {
-    const sound = new Howl({ src: ['/sounds/CHOICE.mp3'] }); // Replace with your sound file
-    const swiperRef = useRef<SwiperType | null>(null); // Keep it as SwiperType | null
+  const sound = new Howl({ src: ["/sounds/CHOICE.mp3"] });
+  const swiperRef = useRef<SwiperType | null>(null);
 
-    // GSAP animation for card appearance
-    useEffect(() => {
-        gsap.from('.pricing-card', { opacity: 100, duration: 1.5, stagger: 0.3 });
-    }, []);
+  useEffect(() => {
+    gsap.from(".pricing-card", { opacity: 100, duration: 1.5, stagger: 0.3 });
+  }, []);
 
-    const handleButtonClick = (pkg: PricingPackage) => {
-        const message = `I am interested in the ${pkg.title} package for ${pkg.price}. Details: ${pkg.description}`;
-        const whatsappUrl = `https://wa.me/916352191174?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    };
+  const handleButtonClick = (pkg: PricingPackage) => {
+    const message = `I am interested in the ${pkg.title} package for ${pkg.price}. Details: ${pkg.description}`;
+    const whatsappUrl = `https://wa.me/916352191174?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
-    // Navigation button click handlers
-    const handlePrevClick = () => {
-        swiperRef.current?.slidePrev();
-    };
+  const handlePrevClick = () => {
+    swiperRef.current?.slidePrev();
+  };
 
-    const handleNextClick = () => {
-        swiperRef.current?.slideNext();
-    };
+  const handleNextClick = () => {
+    swiperRef.current?.slideNext();
+  };
 
-    return (
-        <div className="min-h-screen bg-[#F1F0EB] p-8">
-            <h1 className="text-5xl font-neopixelregular font-bold text-gray-800 mb-8">Our Packages</h1>
-            <Swiper
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper; // Set the swiper reference here
-                }}
-                spaceBetween={30}
-                slidesPerView={3}
+  return (
+    <div className="min-h-screen bg-[#F1F0EB] p-4 sm:p-6 md:p-8">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+        Our Packages
+      </h1>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        spaceBetween={20}
+        slidesPerView={1} // Default to 1 slide on mobile
+        breakpoints={{
+          // Define breakpoints for responsiveness
+          640: {
+            slidesPerView: 1, // 1 slide on small devices
+          },
+          768: {
+            slidesPerView: 2, // 2 slides on medium devices (tablets)
+          },
+          1024: {
+            slidesPerView: 3, // 3 slides on large devices (desktops)
+          },
+        }}
+      >
+        {packages.map((pkg) => (
+          <SwiperSlide key={pkg.id}>
+            <div
+              className={`pricing-card relative bg-white rounded-lg shadow-lg overflow-hidden p-4 sm:p-6 ${
+                pkg.label ? "border-2 border-purple-600" : ""
+              }`}
+              onMouseEnter={() => sound.play()}
+              onMouseLeave={() => sound.stop()}
             >
-                {packages.map(pkg => (
-                    <SwiperSlide key={pkg.id}>
-                        <div
-                            className={`pricing-card relative bg-white rounded-lg shadow-lg overflow-hidden p-6 ${pkg.label ? 'border-2 border-purple-600' : ''}`}
-                            onMouseEnter={() => sound.play()} // Play sound on hover
-                            onMouseLeave={() => sound.stop()} // Stop sound on mouse leave
-                        >
-                            {pkg.label && (
-                                <div className="bg-purple-600 text-white text-center text-xs font-bold p-2 w-full">{pkg.label}</div>
-                            )}
-                            <img src={pkg.image} alt={pkg.title} className="h-32 w-full object-cover mb-4" />
-                            <h3 className="text-xl font-bold mb-2 text-black">{pkg.title}</h3>
-                            <p className="mb-2 text-black line-through">${pkg.originalPrice}</p>
-                            <div className="text-2xl font-semibold mb-6 text-black">${pkg.price}</div>
-                            <ul className="mb-4 text-black">
-                                {pkg.features.map((feature, index) => (
-                                    <li key={index} className="text-sm">{feature}</li>
-                                ))}
-                            </ul>
-                            <button
-                                className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-all duration-300"
-                                onClick={() => handleButtonClick(pkg)}
-                            >
-                                Get Started
-                            </button>
-                        </div>
-                    </SwiperSlide>
+              {pkg.label && (
+                <div className="bg-purple-600 text-white text-center text-xs font-bold p-2 w-full">
+                  {pkg.label}
+                </div>
+              )}
+              <img
+                src={pkg.image}
+                alt={pkg.title}
+                className="h-24 sm:h-32 md:h-40 lg:h-48 w-full object-cover mb-4"
+              />
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-black">
+                {pkg.title}
+              </h3>
+              <p className="mb-2 text-black line-through text-sm sm:text-base">
+                ${pkg.originalPrice}
+              </p>
+              <div className="text-xl sm:text-2xl font-semibold mb-6 text-black">
+                ${pkg.price}
+              </div>
+              <ul className="mb-4 text-sm sm:text-base text-black">
+                {pkg.features.map((feature, index) => (
+                  <li key={index} className="text-xs sm:text-sm">
+                    {feature}
+                  </li>
                 ))}
-            </Swiper>
-            <div className="flex text-xl md:text-2xl lg:text-3xl justify-end space-x-4 mt-4">
-                <button
-                    onClick={handlePrevClick}
-                    className="bg-[#d1d5db] hover:bg-[#9ca3af] text-[#333333] font-bold py-2 px-4 md:py-3 md:px-6 rounded-md"
-                >
-                    <FaArrowLeft />
-                </button>
-                <button
-                    onClick={handleNextClick}
-                    className="bg-[#d1d5db] hover:bg-[#9ca3af] text-[#333333] font-bold py-2 px-4 md:py-3 md:px-6 rounded-md"
-                >
-                    <FaArrowRight />
-                </button>
+              </ul>
+              <button
+                className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-all duration-300"
+                onClick={() => handleButtonClick(pkg)}
+              >
+                Get Started
+              </button>
             </div>
-        </div>
-    );
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="flex text-lg sm:text-xl md:text-2xl lg:text-3xl justify-end space-x-2 sm:space-x-4 mt-4">
+        <button
+          onClick={handlePrevClick}
+          className="bg-[#d1d5db] hover:bg-[#9ca3af] text-[#333333] font-bold py-2 px-3 sm:py-3 sm:px-4 rounded-md"
+        >
+          <FaArrowLeft />
+        </button>
+        <button
+          onClick={handleNextClick}
+          className="bg-[#d1d5db] hover:bg-[#9ca3af] text-[#333333] font-bold py-2 px-3 sm:py-3 sm:px-4 rounded-md"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default PricingCard;

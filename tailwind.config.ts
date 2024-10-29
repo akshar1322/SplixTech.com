@@ -23,6 +23,7 @@ const config: Config = {
         neopixelregular: ["neopixelregular","sans-serif"],
         kontanter: ["kontanter","sans-serif"],
         ColorTube: ["ColorTube","sans-serif"],
+        saiddier: ["saiddier","sans-serif"]
 
     },
     colors: {

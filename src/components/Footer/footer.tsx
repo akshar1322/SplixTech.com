@@ -47,11 +47,11 @@ const Footer: React.FC = () => {
     {
       title: 'PRODUCT',
       links: [
-        { name: 'Ecommerce store', href: '/ecommerce-store' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'AI/Ml', href: '/ai-ml' },
-        { name: 'Wobble Ai', href: '/wobble-ai' },
-        { name: 'Wobble Chat', href: '/wobble-chat' }
+        { name: 'Sounds Scape', href: '/' },
+        { name: '', href: '/' },
+        { name: 'AI/Ml', href: '/' },
+        { name: 'Wobble Ai', href: '/' },
+        { name: 'Wobble Chat', href: '/' }
       ]
     },
     {
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
         className="footer-content flex flex-col md:flex-row justify-between items-start opacity-0 transform translate-y-10  duration-1000 "
       >
           <div className="mb-8 text-black md:mb-0" ref={scaleRef}>
-        <h2 className="font-bold font-neopixelregular text-5xl mb-4">
+        <h2 className=" font-saiddier text-5xl mb-4">
           <Link
             href="/"
             className="cursor-pointer hover:translate-x-2 transition-transform duration-300"

@@ -36,12 +36,12 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="font-neopixelregular rounded-t-2xl bg-[#F1F0EB] p-4">
+    <div className=" rounded-t-2xl bg-[#F1F0EB] p-4">
       <div className="p-5">
-        <h1 className="text-4xl  md:text-7xl text-[#333333] text-start">
+        <h1 className="text-4xl font-saiddier md:text-7xl text-[#333333] text-start">
         Our Projects.
         </h1>
-        <div className="mt-4 flex font-ColorTube flex-wrap justify-end md:justify-end gap-4">
+        <div className="mt-4 flex font-semibold flex-wrap justify-end md:justify-end gap-4">
           <button
             onClick={() => setFilter('all')}
             className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-6 py-3 text-base hover:border-[#fff] cursor-pointer transition"
@@ -111,7 +111,7 @@ const Portfolio = () => {
                 height={200}
                 className="w-full h-auto rounded-lg object-cover"
               />
-              <h2 className="text-xl font-ColorTube md:text-xl text-[#333333] mt-4">{project.title}</h2>
+              <h2 className="text-xl font-semibold md:text-xl text-[#333333] mt-4">{project.title}</h2>
               <div className="flex mt-4 space-x-4">
                 {project.link && (
 

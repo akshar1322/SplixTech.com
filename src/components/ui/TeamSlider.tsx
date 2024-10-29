@@ -28,7 +28,7 @@ const TeamSlider = () => {
   };
 
   return (
-    <div className="font-neopixelregular bg-[#F1F0EB] p-4">
+    <div className="font-semibold bg-[#F1F0EB] p-4">
       <div className="p-5">
         <h1 className="text-4xl md:text-6xl lg:text-7xl text-[#333333] text-start">
           Meet Our Team
