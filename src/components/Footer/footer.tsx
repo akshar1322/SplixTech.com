@@ -1,26 +1,22 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import { FaTwitter, FaInstagram, FaLinkedinIn, FaCookieBite } from 'react-icons/fa';
-import Link from 'next/link';
-import gsap from 'gsap';
+import { useEffect, useRef } from "react";
+import { FaTwitter, FaInstagram, FaLinkedinIn, FaCookieBite } from "react-icons/fa";
 
-
+import Link from "next/link";
+import gsap from "gsap";
 
 const Footer: React.FC = () => {
   const footerContentRef = useRef<HTMLDivElement>(null);
+  const scaleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const footerContent = footerContentRef.current;
-
-    if (footerContent) {
-      footerContent.style.opacity = '1';
-      footerContent.style.transform = 'translateY(0)';
+    if (footerContentRef.current) {
+      footerContentRef.current.style.opacity = "1";
+      footerContentRef.current.style.transform = "translateY(0)";
     } else {
       console.error("Footer content ref is not defined.");
     }
   }, []);
-
-  const scaleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (scaleRef.current) {
@@ -45,83 +41,86 @@ const Footer: React.FC = () => {
 
   const footerLinks = [
     {
-      title: 'PRODUCT',
+      title: "FOLLOW US",
       links: [
-        { name: 'Sounds Scape', href: '/' },
-        { name: '', href: '/' },
-        { name: 'AI/Ml', href: '/' },
-        { name: 'Wobble Ai', href: '/' },
-        { name: 'Wobble Chat', href: '/' }
+        { name: "Instagram", href: "https://www.instagram.com/splixtech?igsh=MTZyZmxjeml4MG0yYg==" },
+        { name: "X", href: "https://x.com/SplixTech?t=em9kASWMdz5KpmlCggxkxg&s=08" },
+        { name: "Bēhance", href: "https://www.behance.net/aksharpatel24" },
+        { name: "Dribbble", href: "https://dribbble.com/Akshar_09" },
+        { name: "GitHub", href: "https://github.com/akshar1322" }
       ]
     },
     {
-      title: 'ABOUT',
+      title: "NAVIGATION",
       links: [
-        { name: 'About us', href: '/about-us' },
-        { name: 'Contact us', href: '/contact-us' }
-      ]
-    },
-    {
-      title: 'OTHER',
-      links: [
-        { name: 'Update Hub', href: '/update-hub' },
-        { name: 'Privacy Hub', href: '/privacy-hub' },
-        { name: 'Cookie', href: '/cookie-hub' },
-        { name: 'Services', href: '/services' },
-        { name: 'Pricing', href: '/pricing' }
+        { name: "Services", href: "/services" },
+        { name: "About", href: "/about-us" },
+        { name: "UpdateHub", href: "/UpdateHub" },
+        { name: "Tea Time with Us", href: "/enquiry" }
       ]
     }
   ];
 
   return (
-    <div className="bg-light-beige text-charcoal p-10">
+    <div className="bg-black text-white p-10 md:p-16 lg:p-24">
       <div
         ref={footerContentRef}
-        className="footer-content flex flex-col md:flex-row justify-between items-start opacity-0 transform translate-y-10  duration-1000 "
+        className="footer-content flex flex-col md:flex-row justify-between items-start opacity-0 transform translate-y-10 duration-1000"
       >
-          <div className="mb-8 text-black md:mb-0" ref={scaleRef}>
-        <h2 className=" font-saiddier text-5xl mb-4">
-          <Link
-            href="/"
-            className="cursor-pointer hover:translate-x-2 transition-transform duration-300"
-          >
-            SpliXTech
-          </Link>
-        </h2>
-      </div>
-        {footerLinks.map((section) => (
-          <div key={section.title} className="mb-6">
-            <h3 className="font-semibold text-sm text-charcoal uppercase mb-3">
-              {section.title}
-            </h3>
-            <ul>
-              {section.links.map((link) => (
-                <li key={link.name} className="mb-1 text-dark-blue-1 cursor-pointer hover:translate-x-2 transition-transform duration-300">
-                  <Link href={link.href}>{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <div className="flex space-x-4 text-black mt-8 md:mt-0">
-          {[
-            { icon: <FaTwitter />, href: "https://x.com/Akshar_patel_13?t=TsN5oGBu9VDVy1J3tAASPQ&s=09" },
-            { icon: <FaInstagram />, href: "https://www.instagram.com/_akshar.x?igsh=emp1cWo4aW5zZTZo" },
-            { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/akshar-patel-4a78b0217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { icon: <FaCookieBite />, href: "/cookie-hub" }
-          ].map(({ icon, href }, index) => (
-            <div
-              key={index}
-              className="text-xl cursor-pointer hover:scale-110 transition-transform duration-300"
-            >
-              <Link href={href} target="_blank" rel="noopener noreferrer">
-                {icon}
-              </Link>
+        {/* Left Links Section */}
+        <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 mb-8 md:mb-0 w-full md:w-auto">
+          {footerLinks.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-lime-500 font-semibold text-2xl uppercase mb-4">
+                {section.title}
+              </h3>
+              <ul>
+                {section.links.map((link) => (
+                  <li key={link.name} className="mb-2 cursor-pointer hover:translate-x-1 transition-transform duration-300">
+                    <Link className="hover:text-lime-500 text-xl" href={link.href}>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
+
+        {/* Contact Section */}
+        <div className="text-left md:text-right mb-8 md:mb-0">
+          <h3 className="text-lime-500 font-semibold text-2xl uppercase mb-4">
+            LET&apos;S CONNECT
+          </h3>
+          <p
+            className="text-2xl md:text-5xl font-light mb-5 cursor-pointer hover:text-lime-500 transition-colors"
+            onClick={() => window.location.href = "mailto:aksharpatel528@gmail.com"}
+          >
+            aksharpatel528@gmail.com
+          </p>
+          <p
+            className="text-2xl md:text-5xl font-light cursor-pointer hover:text-lime-500 transition-colors"
+            onClick={() => window.location.href = "https://wa.me/6352191174"}
+          >
+            +91 6352 191 174
+          </p>
+        </div>
       </div>
-      <p className="text-center text-[#333333] text-sm mt-10">Copyright © SpliXTech</p>
+
+      {/* Bottom Line with Hover Effect */}
+      <div className="w-full h-1 mt-4 bg-black group relative">
+        <div className="absolute bottom-0 w-full h-full bg-gradient-to-r from-orange-500 to-yellow-500 scale-x-0 group-hover:scale-x-100 transition-all duration-300"></div>
+      </div>
+
+      {/* Bottom Copyright and Info */}
+      <div className="flex flex-col md:flex-row justify-between items-center mt-8 text-sm text-gray-500 space-y-4 md:space-y-0">
+        <p>Splitx Tech</p>
+        <p>All rights reserved | 2024</p>
+        <div className="flex items-center space-x-3">
+          <span className="transform rotate-180 transition-transform duration-300">🌐</span>
+          <p className="text-lg md:text-2xl">Based in India</p>
+        </div>
+      </div>
     </div>
   );
 };

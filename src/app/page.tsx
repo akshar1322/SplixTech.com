@@ -5,21 +5,26 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Navigationbar from "@/components/Navigationbar/Navigationbar";
 import WorksSlider from "@/components/ui/WorksSlider";
-import InfiniteImageScroll from "@/components/ui/InfiniteImageScroll";
-import InfiniteTextScroll from "@/components/ui/InfiniteTextScroll";
+
 import TeamSlider from "@/components/ui/TeamSlider";
 import Footer from "@/components/Footer/footer";
-import InfiniteToolsTextScroll from "@/components/ui/InfiniteToolsTextScroll";
+
 
 import CookieCard from "@/components/CookieCard/CookieCard";
 import useInView from '@/hooks/useInView';
 
 import Portfolio from "@/components/ui/Portfolio";
-// import PricingCard from "@/components/ui/PricingCard";
+
 
 import FAQSection from "@/components/ui/FAQSection";
 import AnimatedSVG from "@/components/ui/AnimatedSVG";
-import Slider from "@/components/ui/Slider";
+
+import HeroSection from "@/components/Hero/HeroSection";
+
+
+
+
+
 // import PricingSection from "@/components/ui/price";
 
 
@@ -77,25 +82,28 @@ const Home = () => {
   return (
     <main className=" overflow-y-auto  scrollbar-hide">
             <Navigationbar />
-      <div ref={heroRef}>
-        {/* <HeroSection /> */}
+            {/* <RightSideEmail/> */}
+      <div ref={heroRef} className="">
+        <HeroSection/>
+
       </div>
       <CookieCard />
       <div ref={worksRef} className="works-slider">
-      <Slider />
-        <InfiniteTextScroll />
+
+      <AnimatedSVG />
         <WorksSlider />
       </div>
       <div ref={teamRef} className="team-slider">
-      <InfiniteImageScroll />
+
         <TeamSlider />
       </div>
-      <InfiniteToolsTextScroll />
+
       <Portfolio />
       {/* <PricingSection /> */}
       <br />
       <AnimatedSVG />
       <FAQSection />
+
       <Footer />
     </main>
   );

@@ -40,12 +40,27 @@ const AnimatedSVG: React.FC = () => {
   }, []);
 
   return (
-    <div id="string" className='flex justify-center yellowDot-cursor align-middle' ref={stringRef}>
-      <svg width="1000" height="200" xmlns="http://www.w3.org/2000/svg">
-      {/* Define the gradient */}
-     {/* Define the red-blue-pink gradient */}
-     <defs>
-          <linearGradient id="color-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="0">
+    <div
+      id="string"
+      className="flex justify-center items-center w-full h-full py-6 md:py-10"
+      ref={stringRef}
+    >
+      <svg
+        viewBox="0 0 1000 200" // Use viewBox for responsiveness
+        className="w-full md:w-3/4 lg:w-1/2" // Responsive width with Tailwind
+        height="auto" // Make height responsive to width
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Define the gradient */}
+        <defs>
+          <linearGradient
+            id="color-gradient"
+            gradientUnits="userSpaceOnUse"
+            x1="0"
+            y1="0"
+            x2="100%"
+            y2="0"
+          >
             <stop offset="0%" stopColor="red" />
             <stop offset="50%" stopColor="blue" />
             <stop offset="100%" stopColor="pink" />

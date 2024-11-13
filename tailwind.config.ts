@@ -35,6 +35,7 @@ const config: Config = {
       'light-blue': '#ADD8E6',
       'dark-blue-1': '#1e3a8a',
       'charcoal': '#333333',
+      'lawngreen': '#7CFC00',
 
     },
     clipPath: {

@@ -61,7 +61,7 @@ const WorksSlider = () => {
   };
 
   return (
-    <div className="font-semibold rounded-t-2xl bg-[#F1F0EB] p-4">
+    <div className="font-semibold  bg-[#F1F0EB] p-4">
       <div className="p-5">
         <h1 className="text-4xl md:text-7xl text-[#333333] text-start">
           Websites for Every Business, Across All Platforms.

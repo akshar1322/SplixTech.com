@@ -233,3 +233,19 @@ body {
   background-position: center;
 }
 
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.box {
+  background-color: #1d4ed8; /* Dark blue */
+}
+
+.word {
+  transition: all 0.5s ease;
+}
+

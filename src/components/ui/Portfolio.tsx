@@ -36,7 +36,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className=" rounded-t-2xl bg-[#F1F0EB] p-4">
+    <div className="  bg-[#F1F0EB] p-4">
       <div className="p-5">
         <h1 className="text-4xl font-saiddier md:text-7xl text-[#333333] text-start">
         Our Projects.

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import Contact from '../contact-us/page';
+
 import Headerimage from '@/components/ui/Headerimage';
 import Navigationbar from '@/components/Navigationbar/Navigationbar';
 import Footer from '@/components/Footer/footer';
